@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 public class MainFrame extends JFrame {
     private Container cp;
     private JLabel jlb = new JLabel("ID");
-    private JLabel jlb1 = new JLabel("PW");
+    private JLabel jlb1 = new JLabel("PW123");
     private JTextField EDT = new JTextField();
     private JPasswordField EDT1 = new JPasswordField();
     private JButton jbtn = new JButton("Login");
