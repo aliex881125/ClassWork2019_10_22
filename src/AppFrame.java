@@ -2,9 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLOutput;
 
 public class AppFrame extends JFrame {
-    private Container cp;
+    //private Container cp;
     private JMenuBar jmbar = new JMenuBar();
     private JMenu jmFile = new JMenu("File");
     private JMenu jmTool = new JMenu("Tool");
@@ -13,18 +14,24 @@ public class AppFrame extends JFrame {
     private JMenuItem jmSetting = new JMenuItem("Setting");
     private JMenuItem jmLogout = new JMenuItem("logout");
     private JMenuItem jmCalculate = new JMenuItem("Calculate");
+    private JMenuItem jEncryptor = new JMenuItem("Encryptor");
     private JMenuItem jmAsk = new JMenuItem("Ask");
     private MainFrame LoginFrame;
+    private JDesktopPane desktop = new JDesktopPane();
+    private EncryptorFrame internalFrame = new EncryptorFrame("Encrypt tool");
     public AppFrame(MainFrame login){
         LoginFrame=login;
         init();
     }
-    public void init(){
-        cp=this.getContentPane();
-        this.setLayout(null);
+    private void init(){
+        //cp=this.getContentPane();
+      //  this.setLayout(null);
         this.setBounds(1000,300,500,600);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setTitle("App");
+        this.add(desktop);
+        desktop.add(internalFrame);
+
 
         jmexit.addActionListener(new ActionListener() {
             @Override
@@ -51,6 +58,13 @@ public class AppFrame extends JFrame {
                 mf1.setVisible(true);
             }
         });
+        jEncryptor.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                internalFrame.setVisible(true);
+                System.out.println("2222222222222");
+            }
+        });
 
         this.setJMenuBar(jmbar);
         jmbar.add(jmFile);
@@ -60,6 +74,7 @@ public class AppFrame extends JFrame {
         jmFile.add(jmSetting);
         jmFile.add(jmLogout);
         jmTool.add(jmCalculate);
+        jmTool.add(jEncryptor);
         jmHelp.add(jmAsk);
     }
 }

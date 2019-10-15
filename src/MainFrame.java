@@ -62,7 +62,7 @@ public class MainFrame extends JFrame {
         jbtn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                KeyBoFrame kf = new KeyBoFrame();
+                KeyBoFrame kf = new KeyBoFrame(MainFrame.this);
                 kf.setVisible(true);
             }
         });
@@ -77,5 +77,8 @@ public class MainFrame extends JFrame {
     public void resetData(){
         EDT.setText("");
         EDT1.setText("");
+    }
+    public void setTextp(String str){
+        EDT1.setText(str);
     }
 }
