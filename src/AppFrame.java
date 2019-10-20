@@ -26,7 +26,7 @@ public class AppFrame extends JFrame {
     private void init(){
         //cp=this.getContentPane();
       //  this.setLayout(null);
-        this.setBounds(1000,300,500,600);
+        this.setBounds(1000,300,800,800);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setTitle("App");
         this.add(desktop);
