@@ -9,6 +9,7 @@ public class AppFrame extends JFrame {
     private JMenuBar jmbar = new JMenuBar();
     private JMenu jmFile = new JMenu("File");
     private JMenu jmTool = new JMenu("Tool");
+    private JMenu jmGame = new JMenu("Game");
     private JMenu jmHelp = new JMenu("Help");
     private JMenuItem jmexit = new JMenuItem("Exit");
     private JMenuItem jmSetting = new JMenuItem("Setting");
@@ -16,6 +17,7 @@ public class AppFrame extends JFrame {
     private JMenuItem jmCalculate = new JMenuItem("Calculate");
     private JMenuItem jEncryptor = new JMenuItem("Encryptor");
     private JMenuItem jmAsk = new JMenuItem("Ask");
+    private JMenuItem jmPunch = new JMenuItem("Punch");
     private MainFrame LoginFrame;
     private JDesktopPane desktop = new JDesktopPane();
     private EncryptorFrame internalFrame = new EncryptorFrame("Encrypt tool");
@@ -62,7 +64,15 @@ public class AppFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 internalFrame.setVisible(true);
-                System.out.println("2222222222222");
+
+            }
+        });
+        jmPunch.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+//                GameFrame gf = new GameFrame();
+//                gf.setVisible(true);
+
             }
         });
 
@@ -70,11 +80,13 @@ public class AppFrame extends JFrame {
         jmbar.add(jmFile);
         jmbar.add(jmTool);
         jmbar.add(jmHelp);
+        jmbar.add(jmGame);
         jmFile.add(jmexit);
         jmFile.add(jmSetting);
         jmFile.add(jmLogout);
         jmTool.add(jmCalculate);
         jmTool.add(jEncryptor);
         jmHelp.add(jmAsk);
+        jmGame.add(jmPunch);
     }
 }
