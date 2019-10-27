@@ -42,8 +42,6 @@ public class EncryptorFrame extends JInternalFrame {
         cp=this.getContentPane();
         this.setLayout(new BorderLayout(3,3));
         this.setBounds(10,30,600,600);
-//        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-//        System.out.println("54561436546");
 
         cp.add(jpl, BorderLayout.EAST);
         cp.add(jsb, BorderLayout.CENTER);

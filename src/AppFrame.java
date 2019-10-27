@@ -21,6 +21,9 @@ public class AppFrame extends JFrame {
     private MainFrame LoginFrame;
     private JDesktopPane desktop = new JDesktopPane();
     private EncryptorFrame internalFrame = new EncryptorFrame("Encrypt tool");
+    private GameFrame internalFrame1 = new GameFrame("Game");
+
+
     public AppFrame(MainFrame login){
         LoginFrame=login;
         init();
@@ -28,11 +31,12 @@ public class AppFrame extends JFrame {
     private void init(){
         //cp=this.getContentPane();
       //  this.setLayout(null);
-        this.setBounds(1000,300,800,800);
+        this.setBounds(700,100,1000,1000);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setTitle("App");
         this.add(desktop);
         desktop.add(internalFrame);
+        desktop.add(internalFrame1);
 
 
         jmexit.addActionListener(new ActionListener() {
@@ -70,9 +74,7 @@ public class AppFrame extends JFrame {
         jmPunch.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                GameFrame gf = new GameFrame();
-//                gf.setVisible(true);
-
+                internalFrame1.setVisible(true);
             }
         });
 
