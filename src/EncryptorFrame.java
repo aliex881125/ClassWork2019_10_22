@@ -72,10 +72,10 @@ public class EncryptorFrame extends JInternalFrame {
         jbtn1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (jrb1.isSelected()) {
-                    switch (jcb.getSelectedIndex()) {
-                        case 0:
-                            char data[] = jta.getText().toCharArray();
+                if (jrb1.isSelected()) {   //選擇Encrypt加密
+                    switch (jcb.getSelectedIndex()) {  //選擇Combobox中的哪種加密法
+                        case 0:   //凱薩加密法
+                            char data[] = jta.getText().toCharArray(); //將jta的字元儲存到字元陣列
                             int key = Integer.parseInt(jtf.getText());
                             for (int i = 0; i < data.length; i++) {
                                 data[i] = (char) (data[i] + key);
