@@ -6,9 +6,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Random;
 
-public class Gopher extends JLabel {
-    private ImageIcon img = new ImageIcon("ds.png");
-    private ImageIcon img2 = new ImageIcon("explosion_PNG15401.png");
+public class Gopher extends JLabel implements Runnable{
+    private ImageIcon img = new ImageIcon("n5GcuQTOygzMwcjN3EzNilTOxcTMwQ3Lt92Yuc2cthWcuw2cz5SMw9yL6MHc0RHa.jpg");
+    private ImageIcon img2 = new ImageIcon("explosion_PNG15403.png");
     private Random random = new Random();
     private int x, y;
     private Timer timer, timer1;
@@ -84,5 +84,8 @@ public class Gopher extends JLabel {
         });
 
 //       timer.start();
+    }
+    public void run(){
+        timer.start();
     }
 }

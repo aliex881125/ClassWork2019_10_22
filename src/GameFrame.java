@@ -21,8 +21,8 @@ public class GameFrame extends JInternalFrame {
     private int x, y;
     private JPanel jpn = new JPanel(new GridLayout(1, 9, 2, 2));
     private JPanel jpn1 = new JPanel();
-    private ImageIcon img = new ImageIcon("ds.png");
-    private ImageIcon img2 = new ImageIcon("explosion_PNG15401.png");
+    private ImageIcon img = new ImageIcon("n5GcuQTOygzMwcjN3EzNilTOxcTMwQ3Lt92Yuc2cthWcuw2cz5SMw9yL6MHc0RHa.jpg");
+    private ImageIcon img2 = new ImageIcon("explosion_PNG15403.png");
     private JLabel jlbmos = new JLabel();
     private ArrayList<Gopher> arrayList = new ArrayList<Gopher>();
 
@@ -62,13 +62,14 @@ public class GameFrame extends JInternalFrame {
             }
         });
         timer1 = new Timer(500, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                jlbmos.setIcon(null);
-                x = random.nextInt(GameFrame.this.getHeight() - 300);
-                y = random.nextInt(GameFrame.this.getWidth() - 300);
-                jlbmos.setLocation(x, y);
-            }
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    jlbmos.setIcon(null);
+                    x = random.nextInt(GameFrame.this.getHeight() - 300);
+                    y = random.nextInt(GameFrame.this.getWidth() - 300);
+                    jlbmos.setLocation(x, y);
+                    timer1.stop();
+                }
         });
 
 
@@ -113,7 +114,10 @@ public class GameFrame extends JInternalFrame {
         jbtn1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                arrayList.add(new Gopher(GameFrame.this));
+                Gopher tmpGopher = new Gopher(GameFrame.this);
+                arrayList.add(tmpGopher);
+                tmpGopher.run();
+//                arrayList.add(new Gopher(GameFrame.this));
                 jpn1.add(arrayList.get(arrayList.size() - 1));
                 jpn1.repaint();
                 timer.start();
@@ -129,7 +133,6 @@ public class GameFrame extends JInternalFrame {
             @Override
             public void mousePressed(MouseEvent e) {
                 score++;
-                jlbscore.setText(Integer.toString(score));
                 timer.stop();
                 timer1.start();
                 jlbmos.setIcon(img2);
